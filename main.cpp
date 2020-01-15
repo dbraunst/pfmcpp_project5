@@ -48,7 +48,18 @@ Project 5: Part 1 / 4
  */
 
 #include <iostream>
+#include "Book.h"
+#include "Atomic.h"
+#include "LeakedObjectDetector.h"
+#include "CourseTexts.h"
+#include "Wrappers.h"
+
+//Dan Braunstein ex. 3.7
 int main()
 {
-    std::cout << "good to go!" << std::endl;
+    BookWrapper book1 (new Book("(W)Rappers: Programming for Hip Hop Production", 1024));
+    std::cout << "Title: " << book1.bookPtr->title << ", pages: " << book1.bookPtr->pages << std::endl;
+    CourseTextsWrapper textlist( new CourseTexts() );
+    
+    return 0;
 }
