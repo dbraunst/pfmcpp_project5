@@ -1,4 +1,6 @@
 #include "Wrappers.h"
+#include "Book.h"
+#include "CourseTexts.h"
 
 BookWrapper::BookWrapper(Book* ptr) : bookPtr( ptr ) { }
 

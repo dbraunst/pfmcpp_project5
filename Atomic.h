@@ -49,4 +49,4 @@ namespace juce
       void memoryBarrier() noexcept          { atomic_thread_fence (std::memory_order_seq_cst); }
       std::atomic<Type> value;
     };
-}    
+}

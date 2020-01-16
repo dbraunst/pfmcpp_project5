@@ -7,7 +7,6 @@ Book::~Book()
     std::cout << "Removing " << this->title << " from available titles. (Book Dtor)" << std::endl;    
 }
 
-
 void Book::readBook(int startPage)
 {
     currentPage = startPage;
