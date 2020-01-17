@@ -47,8 +47,8 @@
 //Dan Braunstein ex. 3.7
 int main()
 {
-    //BookWrapper book1 (new Book("(W)Rappers: Programming for Hip Hop Production", 1024));
-    //std::cout << "Title: " << book1.bookPtr->title << ", pages: " << book1.bookPtr->pages << std::endl;
+    BookWrapper book1 (new Book("(W)Rappers: Programming for Hip Hop Production", 1024));
+    std::cout << "Title: " << book1.bookPtr->title << ", pages: " << book1.bookPtr->pages << std::endl;
     CourseTextsWrapper textlist( new CourseTexts() );
     
     return 0;
