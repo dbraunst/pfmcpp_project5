@@ -1,54 +1,55 @@
 /*
-Project 5: Part 1 / 4
- video Chapter 2 - Part 12
+ Project 5: Part 4 / 4
+ video: Chapter 3 Part 7
 
- Create a branch named Part1
-
- Destructors
+ Create a branch named Part4
  
- 1) Copy a few of your user-defined types (the ones with constructors and for()/while() loops from Project 3) here
- 2) add destructors
-        make the destructors do something like print out the name of the class.
-
-	If you already did Chapter2 part 10 on Coliru and don't have a Project3, just grab some UDTs from your Coliru Ch2P10 submission. 
+ Don't #include what you don't use
  
- 3) add 2 new UDTs that use only the types you copied above.
- 4) Add destructors to these 2 new types that do stuff.  
-        maybe print out the name of the class being destructed, or call a member function of one of the members.  be creative
+ 1) Your task is to refactor your Chapter 3 Part 4 task into separate source and header files.
+         Add files via the pane on the left.
  
- 5) Instantiate your 2 UDT's from step 4) in the main() function at the bottom.
+ 2) Put all of your declarations for each class in .h files
+         One header file per class ( i.e. Raider.h for a class named "Raider" )
  
- 6) After you finish, click the [run] button.  Clear up any errors or warnings as best you can.
+ 3) Put all of your implementations in .cpp files.
+         one cpp file per class ( i.e. Raider.cpp for a class named "Raider" )
+ 
+ 4) Put all of your Wrapper classes in a single Wrappers.h file
+         if you implemented your wrapper class functions in-class, you'll need to move them to Wrappers.cpp
+ 
+ 5) NO IN-CLASS IMPLEMENTATION ALLOWED.
+         the only exception is the existing Atomic.h and LeakedObjectDetector.h
+ 
+ 6) for every .cpp file you have to make, insert it into the .replit file after 'main.cpp'.  Don't forget the spaces between file names.
+ If you need help with this step, send me a DM.
+ 
+ 7) click the [run] button.  Clear up any errors or warnings as best you can.
  
  Commit your changes by clicking on the Source Control panel on the left, entering a message, and click [Commit and push].
  
  Send me the the link to your repl.it in a DM on Slack
 
  Wait for my code review.
+ 
+ Remember, your Chapter 3 Part 4 task worked when it was all in one file. so you shouldn't need to edit any of it.  
+         just split it up into source files and provide the appropriate #include directives.
  */
 
-/*
- copied UDT 1:
- */
-
-/*
- copied UDT 2:
- */
-
-/*
- copied UDT 3:
- */
-
-/*
- new UDT 4:
- */
-
-/*
- new UDT 5:
- */
 
 #include <iostream>
+#include "Wrappers.h"
+#include "Book.h"
+#include "CourseTexts.h"
+#include "Atomic.h"
+#include "LeakedObjectDetector.h"
+
+//Dan Braunstein ex. 3.7
 int main()
 {
-    std::cout << "good to go!" << std::endl;
+    BookWrapper book1 (new Book("(W)Rappers: Programming for Hip Hop Production", 1024));
+    std::cout << "Title: " << book1.bookPtr->title << ", pages: " << book1.bookPtr->pages << std::endl;
+    CourseTextsWrapper textlist( new CourseTexts() );
+    
+    return 0;
 }
